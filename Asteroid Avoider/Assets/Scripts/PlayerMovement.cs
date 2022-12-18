@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(viewportPosition.x > 1)
         {
-            newPosition.x = -newPosition.x + 0.1f;
+            newPosition.x = -newPosition.x + 0.1f; // Adding 0.1f for smooth movement
         }
         else if(viewportPosition.x < 0)
         {
