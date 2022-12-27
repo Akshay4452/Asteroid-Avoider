@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverHandler;
+    [SerializeField] GameOverHandler gameOverHandler;
     public void Crash()
     {
-        gameObject.SetActive(false);
-        gameOverHandler.SetActive(true);
-    }
-
-    private void Update() 
-    {
-        if(gameOverHandler == null)
-        {
-            Debug.LogError("Game Over Handler not found");
-        }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            gameOverHandler.SetActive(true);
-        }
+        gameOverHandler.EndGame();
+        gameObject.SetActive(false); 
     }
 }
