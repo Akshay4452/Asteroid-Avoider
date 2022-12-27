@@ -24,7 +24,7 @@ public class AsteroidSpawner : MonoBehaviour
     }
     private void SpawnAsteroid()
     {
-        // side variable is for deciding side of Viewport rectangle [0,1,2,3] with 0 = y-axis, 2 = x-axis
+        // side variable is for deciding side of Viewport rectangle [0,1,2,3] with 0 = y-axis, 1 = x-axis
         // Viewport rectangle is used for spawning asteroids from randomly selected sides
         int side = Random.Range(0,4);
 
