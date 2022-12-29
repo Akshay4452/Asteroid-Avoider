@@ -10,7 +10,7 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] private ScoreHandler scoreHandler;
     [SerializeField] private GameObject gameOverDisplay;
     [SerializeField] private AsteroidSpawner asteroidSpawner;
-    DontDestroyMusic bg_music;
+    [SerializeField] private GameObject pauseButton;
     public void EndGame()
     {
         asteroidSpawner.enabled = false;
@@ -18,20 +18,16 @@ public class GameOverHandler : MonoBehaviour
 
         int finalScore = scoreHandler.EndTimer();
         gameOverText.text = $"Your Score: {finalScore}";
+
+        pauseButton.SetActive(false);
     }
     public void PlayAgain()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Scene_Game");
     }
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene(0);
-        // bg_music.GetComponent<AudioSource>().Play();
-    }
-
-    public void ResumeGame()
-    {
-
+        SceneManager.LoadScene("Scene_MainMenu");
     }
 }

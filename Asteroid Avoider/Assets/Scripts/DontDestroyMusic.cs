@@ -22,7 +22,7 @@ public class DontDestroyMusic : MonoBehaviour
     }
     void Update() 
     {
-       if(SceneManager.GetActiveScene().buildIndex == 2)
+       if(SceneManager.GetActiveScene().name == "Scene_Game")
        {
             // build index = 2 stands for Game Scene
             Destroy(gameObject);
