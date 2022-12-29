@@ -10,6 +10,7 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] private ScoreHandler scoreHandler;
     [SerializeField] private GameObject gameOverDisplay;
     [SerializeField] private AsteroidSpawner asteroidSpawner;
+    DontDestroyMusic bg_music;
     public void EndGame()
     {
         asteroidSpawner.enabled = false;
@@ -20,12 +21,13 @@ public class GameOverHandler : MonoBehaviour
     }
     public void PlayAgain()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void ReturnToMain()
     {
         SceneManager.LoadScene(0);
+        // bg_music.GetComponent<AudioSource>().Play();
     }
 
     public void ResumeGame()

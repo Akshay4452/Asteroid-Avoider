@@ -48,7 +48,8 @@ public class PlayerMovement : MonoBehaviour
             // we will use camera to convert screen space to world space
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            movementDirection = transform.position - worldPosition;
+            // movementDirection = transform.position - worldPosition; // moving away from touch position
+            movementDirection = worldPosition - transform.position; // moving towards touch position
             movementDirection.z = 0; // so that spaceship wont move inside or outside of the screen
 
             movementDirection.Normalize(); // if its magnitude increases, speed can also change very quickly
